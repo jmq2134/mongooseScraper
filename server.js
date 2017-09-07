@@ -18,6 +18,7 @@ mongoose.Promise = Promise;
 
 // Initialize Express
 var app = express();
+var PORT = process.env.PORT || 8080;
 
 // Use morgan and body parser with our app
 app.use(logger("dev"));
@@ -29,7 +30,7 @@ app.use(bodyParser.urlencoded({
 app.use(express.static("public"));
 
 // Database configuration with mongoose
-mongoose.connect("mongodb://localhost/articles");
+mongoose.connect("mongodb://heroku_nfnk0lzc:7ukd9qlstm24cktq8f3c6jkme1@ds129374.mlab.com:29374/heroku_nfnk0lzc");
 var db = mongoose.connection;
 
 // Show any mongoose errors
@@ -152,7 +153,7 @@ app.post("/articles/:id", function(req, res) {
 });
 
 
-// Listen on port 3000
-app.listen(3000, function() {
-  console.log("App running on port 3000!");
+// Listen on port 8080
+app.listen(PORT, function() {
+  console.log("App running on port 8080!");
 });
