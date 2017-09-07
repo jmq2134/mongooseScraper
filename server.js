@@ -18,7 +18,7 @@ mongoose.Promise = Promise;
 
 // Initialize Express
 var app = express();
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 3000;
 
 // Use morgan and body parser with our app
 app.use(logger("dev"));
@@ -153,7 +153,7 @@ app.post("/articles/:id", function(req, res) {
 });
 
 
-// Listen on port 8080
+// Listen on port 3000
 app.listen(PORT, function() {
-  console.log("App running on port 8080!");
+  console.log("App running on port 3000!");
 });
